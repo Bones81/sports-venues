@@ -1,7 +1,7 @@
 # Sports Venues CRUD app
 
 ## Live Link
-* https://warm-crag-60935.herokuapp.com/
+* https://venues.fly.dev/
 
 ## Technologies Used
 * HTML, CSS, JS, Node.js, Express.js, Mongo Atlas, Mongoose, EJS, Heroku
