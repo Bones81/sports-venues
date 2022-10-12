@@ -1,7 +1,10 @@
+const { config } = require('dotenv');
 const express = require('express');
 const { db } = require('../models/venue.js');
 const router = express.Router();
 const Venue = require('../models/venue.js')
+require("dotenv").config()
+const API_KEY = process.env.API_KEY
 
 //___________________
 // Routes
@@ -43,6 +46,7 @@ router.get('/venues/:id', (req, res) => {
     res.render('show.ejs', {
       tabTitle: foundVenue.name + ' | Details',
       venue: foundVenue,
+      API_KEY: API_KEY
     })
   })
 })
