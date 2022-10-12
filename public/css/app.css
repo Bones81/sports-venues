@@ -1,0 +1,498 @@
+main {
+  padding: 0.5em 0;
+}
+/* START PAGE */
+#start-main {
+  min-height: 100vh;
+  background-image: url(https://previews.123rf.com/images/red33/red331302/red33130200013/17904433-%E3%82%B9%E3%83%9D%E3%83%BC%E3%83%84%E3%81%AE%E3%82%B7%E3%83%BC%E3%83%A0%E3%83%AC%E3%82%B9%E3%81%AA%E3%83%91%E3%82%BF%E3%83%BC%E3%83%B3-%E3%83%99%E3%82%AF%E3%83%88%E3%83%AB.jpg);
+  background-size: cover;
+  background-position: center;
+  background-color: (0,0,0,0.4);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#start-div {
+  min-height: 80vh;
+  border: 5px solid rgb(6, 6, 49);
+  border-radius: 1em;
+  display: flex;
+  flex-flow: column nowrap;
+  gap: 1em;
+  padding: 1em;
+  background-color: lightgray;
+  justify-content: space-evenly;
+  align-items: center;
+  align-content: center;
+}
+
+#start-div-row {
+  flex-basis: 100%;
+}
+
+#start-div-titles {
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+}
+
+#enter-site-btn {
+  background-color: green;
+  color: white;
+  text-shadow: 1px 1px 0px black;
+  text-decoration: none;
+}
+
+.counter { /* use for counter of venues in database */
+  font-size: 1.5em;
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
+
+#start-main img {
+  max-width: 250px;
+}
+
+.extra-img {
+  display: none;
+}
+
+/* HEADER */
+header {
+  background: linear-gradient(225deg, lightgreen, var(--bs-cyan));
+  position: sticky;
+  top: 0;
+  z-index: 99;
+  padding-bottom: 0.5em;
+}
+.header-wrapper {
+  display: flex;
+  flex-flow: row wrap;
+  align-items: center;
+  justify-content: space-around;
+  padding-top: 1em;
+}
+
+header img {
+  max-width: 100px;
+  display: inline;
+  margin: 0 auto;
+  order: 1;
+  border-radius: 50%;
+}
+
+header h1 {
+  float: right;
+  font-size: 2em;
+  font-weight: bold;
+  font-style: italic;
+  text-align: center;
+  margin: 0;
+  color: var(--bs-blue);
+  width: 50%;
+  order: 2;
+}
+
+header ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0 auto;
+  width: fit-content;
+  display: flex;
+  flex-flow: row wrap;
+  gap: 1em;
+  margin: 0 auto;
+}
+
+header a {
+  text-decoration: none;
+  transition: all 0.3s;
+  color: var(--bs-body-color)
+}
+
+header a:hover {
+  color: var(--bs-cyan)
+}
+
+header li {
+  transition: all 0.3s;
+}
+
+header li:hover {
+  transform: scale(1.2);
+}
+
+#search-form, #sort-form {
+  font-size: calc(0.75rem);
+  text-align: center;
+  display: flex;
+  flex-flow: row wrap;
+  column-gap: 1em;
+  justify-content: center;
+  align-items: center;
+}
+
+/* INDEX PAGE */
+#index-main {
+  text-align: center;
+  margin: 0 auto 1em;
+  background: linear-gradient(to right, whitesmoke, rgb(241, 228, 228), whitesmoke);
+}
+
+.page-title {
+  font-size: 1.75em;
+  background-color: var(--bs-blue);
+  text-align: center;
+  padding: 0.5em;
+  border-radius: 50px;
+}
+
+#index-main h3 {
+  font-size: calc(1rem + 0.6vw);
+}
+
+#index-main h4 {
+  font-size: calc(0.75rem + .3vw);
+}
+
+.card {
+  background-image: url(https://previews.123rf.com/images/red33/red331302/red33130200013/17904433-%E3%82%B9%E3%83%9D%E3%83%BC%E3%83%84%E3%81%AE%E3%82%B7%E3%83%BC%E3%83%A0%E3%83%AC%E3%82%B9%E3%81%AA%E3%83%91%E3%82%BF%E3%83%BC%E3%83%B3-%E3%83%99%E3%82%AF%E3%83%88%E3%83%AB.jpg);
+  background-size: contain;
+  background-position: center;
+  background-repeat: repeat;
+  margin: 0.5em auto;
+
+}
+
+.card-content-wrapper {
+  background: rgba(255,255,255,0.8);
+  border: 1px solid var(--bs-body-color);
+  width: fit-content;
+  margin: 0 auto;
+  padding: 0.5em;
+}
+
+.card a {
+  text-decoration: none;
+  cursor: pointer;
+  color: black;
+}
+
+.card img {
+  max-width: 250px;
+}
+
+.show-on-widescreen {
+  display: none;
+}
+
+/* SHOW PAGE */
+#show-main {
+  background-image: url(https://previews.123rf.com/images/red33/red331302/red33130200013/17904433-%E3%82%B9%E3%83%9D%E3%83%BC%E3%83%84%E3%81%AE%E3%82%B7%E3%83%BC%E3%83%A0%E3%83%AC%E3%82%B9%E3%81%AA%E3%83%91%E3%82%BF%E3%83%BC%E3%83%B3-%E3%83%99%E3%82%AF%E3%83%88%E3%83%AB.jpg);
+  background-size: contain;
+  background-position: center;
+  background-repeat: repeat;
+}
+
+#show-main h2 {
+  animation-name: title-lights, slide-in;
+  animation-duration: 4s, 2s;
+  animation-iteration-count: infinite, 1;
+  animation-timing-function: ease-in-out, ease-out;
+}
+
+.show-img {
+  max-width: 250px;
+  width: 60%;
+  display: block;
+  margin: 0.5em auto;
+  box-shadow: 1px 1px 10px var(--bs-blue);
+}
+
+table, tr, td, thead {
+  font-size: 0.9em;
+  background: rgba(255,255,255,0.6);
+  padding: 3px;
+}
+
+table {
+  margin: 0 auto;
+  box-shadow: 2px 2px 2px var(--bs-green),
+              2px -2px 2px var(--bs-green),
+              -2px -2px 2px var(--bs-green),
+              -2px 2px 2px var(--bs-green);
+}
+
+/* The following Stack Overflow page helped me to come up with the below CSS necessary to resize my iframe dynamically: https://stackoverflow.com/questions/11122249/scale-iframe-css-width-100-like-an-image */
+
+.wrapper {
+  width: 80%; 
+  max-width: 600px; 
+  height: 100%; 
+  margin: 1em auto;
+  background: #ccc;
+}
+
+.h_iframe {
+  position: relative;
+  padding-top: 56%;
+}
+
+.h_iframe iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.sticky-footer-spacer {
+  height: 10%;
+  width: 100%;
+  padding-bottom: 12vh;
+}
+
+.buttons {
+  width: 100%;
+  position: fixed;
+  bottom: 0;
+}
+
+button {
+  background: none;
+  border: none;
+  color: var(--bs-light);
+}
+
+.btn-sm {
+  /* margin: 0.5em auto; */
+  border: 1px solid #ccc;
+}
+
+a.btn-primary {
+  display: block;
+  width: fit-content;
+  margin: 0.5em auto;
+  transition: all .15s;
+}
+
+a.btn-primary:hover {
+  transform: scale(1.2);
+}
+
+.delete-form {
+  display: grid;
+  place-items: center;
+  width: fit-content;
+  margin: 0.5em auto;
+  text-align: center;
+  transition: all .15s;
+} 
+
+.delete-form:hover {
+  transform: scale(1.2);
+}
+
+.btn-danger {
+  height: 100%;
+}
+
+/* NEW/EDIT VIEWS */
+#new-main, #edit-main {
+  background: linear-gradient(to right, whitesmoke, rgb(241, 228, 228), whitesmoke);
+}
+
+#new-main form, #edit-main form {
+  background: linear-gradient(225deg, lightgreen, var(--bs-cyan));
+  padding: 1em;
+  margin: 1em auto;
+  font-size: calc(0.75rem);
+  width: calc(95vw - 1em);
+  border: 1px solid var(--bs-body-color);
+}
+
+#new-main input, #new-main select, #edit-main input, #edit-main select {
+  margin-bottom: 0.5em;
+}
+
+#new-main .add-new-btn, #edit-main .update-btn {
+  display: block;
+  width: fit-content;
+  margin: 0 auto;
+}
+
+/* MEDIA QUERIES BEGIN HERE */
+/* AT 600PX, CHANGE THE FOLLOWING: */
+@media (min-width: 600px) {
+  .extra-img:nth-of-type(2n) {
+    display: inline;
+  }
+
+  header {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    column-gap: 1em;
+  }
+
+  header h1 {
+    font-size: 1.5em;
+    width: 30vw;
+  }
+
+  .header-wrapper {
+    display: flex;
+    flex-flow: column nowrap;
+    column-gap: 1em;
+    padding: 1em 0;
+  }
+
+  nav {
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    /* align-content: center; */
+  }
+
+  .card {
+    margin: 0.5em auto;
+  }
+  .card-content-flex-container {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-evenly;
+    padding: 1em;
+  }
+
+  .card-img {
+    /* flex-basis: 40%; */
+    width: 40%;
+    object-fit: cover;
+  }
+
+  .card-content-wrapper {
+    max-width: 60%;
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+  }
+
+  #new-main form, #edit-main form {
+    width: 70vw;
+    margin: 5vw auto;
+  }
+
+  #show-main {
+    display: flex;
+    flex-flow: row wrap;
+    gap: 1em;
+  }
+
+  #show-main h2 {
+    flex-basis: 100%;
+  }
+
+  .show-img-wrapper {
+    flex-basis: 100%;
+    display: flex;
+    flex-flow: row wrap;
+  }
+
+  .show-img {
+    max-width: 250px;
+  }
+  
+  #show-main table {
+    flex-basis: 70%;
+    font-size: calc(1rem + .4vw);
+  }
+
+  #show-main .wrapper {
+    flex-basis: 80%;
+  }
+
+  .delete-form, a.btn-primary {
+    margin: 0;
+  }
+
+  .buttons {
+    flex-basis: 100%;
+    width: 100%;
+    padding-bottom: 1em;
+    display: flex;
+    flex-flow: row wrap;
+    gap: 1em;
+    justify-content: space-evenly;
+  }
+}
+
+/* AT 800PX, CHANGE THE FOLLOWING: */
+@media (min-width: 800px) {
+  .extra-img {
+    display: inline;
+  }
+
+  .show-img {
+    max-width: 300px;
+  }
+
+  header {
+    justify-content: space-evenly;
+  }
+
+  header h1 {
+    font-size: 2.5em;
+  }
+  .header-wrapper {
+    flex-flow: row wrap;
+  }
+
+  #show-main table {
+    font-size: calc(1.25rem + .6vw);
+  }
+}
+
+/* AT 1200PX, CHANGE THE FOLLOWING: */
+@media (min-width: 1200px) {
+  .show-on-widescreen {
+    display: inline;
+  }
+}
+
+
+/* ANIMATIONS */
+@keyframes title-lights {
+  from {
+    text-shadow: var(--bs-green) 5px 5px 2px;
+  }
+
+  25% {
+    text-shadow: var(--bs-yellow) -5px 5px 2px;
+  }
+
+  50% {
+    text-shadow: var(--bs-red) -5px -5px 2px;
+  }
+
+  75% {
+    text-shadow: var(--bs-cyan) 5px -5px 2px;
+  }
+
+  to {
+    text-shadow: var(--bs-green) 5px 5px 2px;
+  }
+}
+
+@keyframes slide-in {
+  from {
+    margin-left: -100vw;
+  }
+
+  to {
+    margin-left: 0;
+  }
+}

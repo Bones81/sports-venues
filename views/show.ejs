@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <%- include('./partials/head.ejs')%>
+</head>
+<body>
+  <header>
+    <%- include('./partials/header.ejs')%>
+  </header>
+  <main id="show-main"
+    <% 
+      const sportArray = ['Football','Hockey','Soccer','Baseball','Basketball','Golf','Olympics','Tennis'];
+    if (sportArray.includes(venue.pSport)) { %>
+      style="background-image:url('/img/<%=venue.pSport.toLowerCase()%>.jpeg')"
+    <% } %>
+  >
+    <h2 class="page-title"><%=venue.name%></h2>
+    <div class="show-img-wrapper">
+      <% if (venue.outsideImg !== '') { %>
+        <img class="show-img" src="<%=venue.outsideImg%>" alt="image of the outside of <%=venue.name%>">
+      <% } %>
+      <% if (venue.insideImg !== '') { %>
+        <img class="show-img" src="<%=venue.insideImg%>" alt="image of the inside of <%=venue.name%>">
+      <% } %>
+    </div>
+    <table>
+      <tr>
+        <td class="td-label">Venue Name </td>
+        <td class="td-data"><%=venue.name%></td>
+      </tr>
+      <tr>
+        <td class="td-label">Venue Type </td>
+        <td class="td-data"><%=venue.type%></td>
+      </tr>
+      <tr>
+        <td class="td-label">Year Built </td>
+        <td class="td-data"><%=venue.year%></td>
+      </tr>
+      <tr>
+        <td class="td-label">Capacity </td>
+        <td class="td-data"><%=venue.capacity%></td>
+      </tr>
+      <tr>
+        <td class="td-label">Cost to Build </td>
+        <td class="td-data">$<%=venue.cost%></td>
+      </tr>
+      <tr>
+        <td class="td-label">Active </td>
+        <% if (venue.stillExists === true) { %>
+          <td class="td-data">Yes</td>
+        <% } else if (venue.stillExists === false) { %>
+          <td class="td-data">No</td>
+        <% } else { %>
+          <td class="td-data">Info not entered in database</td>
+        <% } %>
+      </tr>
+      <tr>
+        <td class="td-label">Primary Sport </td>
+        <td class="td-data"><%=venue.pSport%></td>
+      </tr>
+      <tr>
+        <td class="td-label">Primary Team </td>
+        <td class="td-data"><%=venue.pTeam%></td>
+      </tr>
+      <tr>
+        <td class="td-label">Secondary Sports </td>
+        <td class="td-data"><%=venue.sSports.join(', ')%></td>
+      </tr>
+      <tr>
+        <td class="td-label">Secondary Teams </td>
+        <td class="td-data"><%=venue.sTeams.join(', ')%></td>
+      </tr>
+      <tr>
+        <td class="td-label">Nicknames </td>
+        <td class="td-data"><%=venue.nicknames.join(', ')%></td>
+      </tr>
+      <tr>
+        <td class="td-label">City </td>
+        <td class="td-data"><%=venue.city%></td>
+      </tr>
+      <tr>
+        <td class="td-label">State </td>
+        <td class="td-data"><%=venue.state%></td>
+      </tr>
+      <tr>
+        <td class="td-label">Country </td>
+        <td class="td-data"><%=venue.country%></td>
+      </tr>
+      <tr>
+        <td class="td-label">Links </td>
+        <td class="td-data">
+          <a href="<%=venue.links.website%>" 
+          <% if(venue.links.website !== '') { %> 
+            target="_blank"
+            >Venue Website
+          </a>
+          <% } else { %>
+            style="display:none">
+          </a>
+          <% } %>
+          </td>
+      </tr>
+      <tr>
+        <td class="td-data"></td>
+        <td class="td-data">
+          <a href="https://www.twitter.com/<%=venue.links.twitter%>" class="twitter-link social-link" 
+          <% if(venue.links.twitter !== '') { %> 
+            target="_blank"
+            >
+            <!--Insert Twitter Icon here-->
+            Twitter
+          </a>
+          <% } else { %>
+            style="display:none">
+          </a>
+          <% } %>
+        </td>
+      </tr>
+      <tr>
+        <td class="td-data"></td>
+        <td class="td-data">
+          <a href="https://www.facebook.com/<%=venue.links.fb%>" class="fb-link social-link" 
+          <% if (venue.links.fb !== '') { %>
+            target="_blank" 
+            >
+            <!--Insert FB Icon here-->
+            Facebook
+          </a>
+          <% } else { %>
+            style="display: none">
+          </a>
+          <% } %>
+        </td>
+      </tr>
+      <tr>
+        <td class="td-data"></td>
+        <td class="td-data">
+          <a href="https://www.instagram.com/<%=venue.links.ig%>" class="ig-link social-link"
+            <% if(venue.links.ig !== '') { %>
+              target="_blank" 
+              >
+              <!--Insert Instagram Icon here-->
+              Instagram
+            </a>        
+            <% } else { %>
+              style="display: none">
+            </a> 
+            <% } %>
+        </td>
+      </tr>
+    </table>
+    <!-- YOUTUBE EMBED GOES HERE-->
+    <% if (venue.highlightURL !== "") { 
+      const splitURL = venue.highlightURL.split('/'); 
+      const videoID = splitURL[splitURL.length - 1]; %>
+      <div class="wrapper">
+        <div class="h_iframe">
+          <iframe src="https://youtube.com/embed/<%=videoID%>" title="video of <%=venue.name%> highlight(s)" width="420" height="315" frameborder="0"></iframe>
+        </div>
+      </div>
+    <% } %>
+    
+    <!-- GOOGLE MAPS EMBED GOES HERE -->
+    <div class="wrapper">
+      <div class="h_iframe">
+        <iframe
+          width="600"
+          height="450"
+          style="border:0"
+          loading="lazy"
+          allowfullscreen
+          src="https://www.google.com/maps/embed/v1/place?key=<%process.env.API_KEY%>
+            &q=<%=venue.name%>,<%=venue.city%>+<%=venue.state%>+<%=venue.country%>">
+        </iframe>
+      </div>
+    </div>
+    <div class="sticky-footer-spacer"></div>
+    <div class="buttons">
+      <!-- Edit button -->
+      <a class="btn btn-primary" href="/venues/<%=venue.id%>/edit"><button>Edit <%=venue.name%></button></a>
+      <!-- DELETE button -->
+      <form class="delete-form" action="/venues/<%=venue.id%>?_method=DELETE" method="POST">
+        <input class="btn btn-sm btn-danger" type="submit" value="DELETE <%=venue.name%> (cannot be undone)">
+      </form>
+    </div>
+
+  </main>
+</body>
+</html>

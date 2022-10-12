@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <%- include('./partials/head.ejs')%>
+</head>
+<body>
+  <header>
+    <%- include('./partials/header.ejs')%>
+  </header>
+  <main id="index-main">
+    <h2 class="page-title">List of Venues</h2><!--May replace w variable, eventually-->
+    <h3>Current number of venues displayed: <span class="counter"><%=venuesCount%></span></h3>
+    <div class="container">
+      <% for (let venue of venues) { %> 
+        <div class="card"
+        <% 
+          const sportArray = ['Football','Hockey','Soccer','Baseball','Basketball','Golf','Olympics','Tennis'];
+          if (sportArray.includes(venue.pSport)) { %>
+          style="background-image:url('/img/<%=venue.pSport.toLowerCase()%>.jpeg')"
+        <% } %>
+        >
+          <a href="/venues/<%=venue.id%>">
+            <div class="card-content-flex-container">
+              <% if (venue.outsideImg !== '') { %>
+              <img class="card-img" src="<%=venue.outsideImg%>" alt="pic of <%=venue.name%>">
+              <% } %>
+              <div class="card-content-wrapper">
+                <h3><%=venue.name%></h3>
+                <h4>Built: <%=venue.year%></h4>
+                <h4>Capacity: <%=venue.capacity%></h4>
+                <h4>Primary sport: <%=venue.pSport%></h4>
+                <h4>Home of the <%=venue.pTeam%></h4>
+              </div>
+              <% if (venue.insideImg !== '') { %> 
+              <img class="card-img show-on-widescreen" src="<%=venue.insideImg%>" alt="pic of <%=venue.name%>">
+              <% } %>
+            </div>
+          </a>
+        </div>
+      <% } %>
+    </div>
+  </main>
+  
+
+</body>
+</html>

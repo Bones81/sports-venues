@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <%- include('./partials/head.ejs')%>
+</head>
+<body>
+  <header>
+    <%- include('./partials/header.ejs')%>
+  </header>
+  <main id="new-main">
+    <h2 class="page-title">Add a New Venue</h2>
+    <form action="/venues" method="POST">
+      <label for="venue-name">Name of Venue (required) </label>
+      <input type="text" name="name" id="venue-name" placeholder="Busch Stadium" size="30"><br/>
+
+      <label for="venue-type">Type of Venue (stadium, arena, course, pool, etc.) </label>
+      <input type="text" name="type" id="venue-type" placeholder="Stadium" size="30"><br/>
+
+      <label for="venue-year">Year of Construction </label>
+      <input type="text" name="year" id="venue-year" placeholder="2006" size="4"><br/>
+
+      <label for="venue-capacity">Capacity </label>
+      <input type="text" name="capacity" id="venue-capacity" placeholder="45,594" size="15"><br/>
+
+      <label for="venue-cost">Construction Cost $</label>
+      <input type="text" name="cost" id="venue-cost" placeholder="365,000,000 or 365 million" size="25"><br/>
+
+      <label for="venue-nicknames">Venue Nickname(s) (separate multiple entries with a comma and space) </label>
+      <input type="text" name="nicknames" placeholder="New Busch Stadium, Busch Stadium III" size="30"><br/>
+
+      <input type="checkbox" id="still-in-use" name="stillExists">
+      <label for="still-in-use">Venue still in use?</label><br/>
+
+      <label for="primary-sport">Venue's primary sport </label>
+      <select name="pSport" id="primary-sport">
+        <option value="None Selected">--Choose a sport--</option>
+        <option value="Baseball">Baseball</option>
+        <option value="Basketball">Basketball</option>
+        <option value="Football">American football</option>
+        <option value="Soccer">Soccer/European football</option>
+        <option value="Hockey">Hockey</option>
+        <option value="Golf">Golf</option>
+        <option value="Olympics">Olympic Games</option>
+        <option value="Tennis">Tennis</option>
+        <option value="Other">Other</option>
+      </select><br/>
+      
+      <label for="venue-pTeam">Venue's primary team/tenant </label>
+      <input type="text" name="pTeam" id="venue-pTeam" placeholder="St. Louis Cardinals" size="30"><br/>
+
+      <label for="venue-sSports">Other sports (separate multiple entries with a comma and space) </label>
+      <input type="text" name="sSports" id="venue-sSports" placeholder="soccer, hockey, football" size="30"><br/>
+
+      <label for="venue-sTeams">Other teams/tenants (separate multiple entries with a comma and space) </label>
+      <input type="text" name="sTeams" id="venue-sTeams" placeholder="St. Louis Blues, USWNT, USMNT, Southern Illinois University" size="35"><br/>
+
+      <label for="venue-city">City </label>
+      <input type="text" name="city" id="venue-city" placeholder="St. Louis" size="15"><br/>
+
+      <label for="venue-state">State (or Province) </label>
+      <input type="text" name="state" id="venue-state" placeholder="Missouri" size="10"><br/>
+
+      <label for="venue-country">Country </label>
+      <input type="text" name="country" id="venue-country" placeholder="USA" size="10"><br/>
+
+      <label for="venue-oImg">Picture of Venue from outside (enter image url) </label>
+      <input type="url" name="outsideImg" id="venue-oImg" placeholder="https://pbs.twimg.com/media/EydUb4IXAAcJM2t?format=jpg&name=large" size="35"><br/>
+
+      <label for="venue-iImg">Picture of Venue from inside (enter image url) </label>
+      <input type="url" name="insideImg" id="venue-iImg" placeholder="https://www.stlmag.com/downloads/315861/download/Busch%20Stadium%20.jpg?cb=dc895e8018195e9d9e7284b9b5f6dd46&w=1726" size="35"><br/>
+
+      <label for="venue-highlight">YouTube link to historic moment(s) that occurred at this venue </label>
+      <input type="url" name="highlightURL" id="venue-highlight" placeholder="https://youtu.be/fJ86nJR9aFw" size="30"><br/>
+
+      <label for="venue-website">Venue Website </label>
+      <input type="url" name="website" id="venue-website" placeholder="https://www.mlb.com/cardinals/ballpark" size="35"><br/>
+
+      <label for="venue-twitter">Venue's Twitter handle @</label>
+      <input type="text" name="twitter" id="venue-twitter" placeholder="buschstadiumiii" size="20"><br/>
+
+      <label for="venue-fb">Venue's Facebook handle @</label>
+      <input type="text" name="fb" id="venue-fb" placeholder="Busch-Stadium-119956968054122" size="20"><br/>
+
+      <label for="venue-ig">Venue's Instagram handle @</label>
+      <input type="text" name="ig" id="venue-ig" placeholder="busch__stadium" size="20"><br/>
+      
+      <input type="submit" class="add-new-btn btn btn-sm btn-primary" value="Add New Venue With These Values">
+    </form>
+  </main>
+</body>
+</html>

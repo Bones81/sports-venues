@@ -1,0 +1,35 @@
+<div class="header-wrapper">
+  <h1>Sports Venues</h1>
+  <img src="https://i.pinimg.com/474x/9f/70/2d/9f702d728dd18f65cb6f59237881111b.jpg" alt="Header stadium icon">
+</div>
+
+<nav>
+  <ul>
+    <li><a href="/venues">Venues Home</a></li>
+    <li><a href="/venues/new">Add a Venue</a></li>
+  </ul>
+  <form action="/venues/search" method="post" id="search-form">
+    <label for="searchbar">Search Venues:</label>
+    <input type="search" name="searchString" id="searchbar">
+    <input type="submit" value="Begin search">
+  </form>
+  <form action="/venues/sort" method="post" id="sort-form">
+    <select name="sortChoice" id="sort-choice-dropdown">
+      <option value="default">-- Choose sort criteria --</option>
+      <option value="name">Venue name</option>
+      <option value="type">Type (stadium, arena, etc.)</option>
+      <option value="year">Year built</option>
+      <option value="capacity">Capacity</option>
+      <option value="cost">Cost to build</option>
+      <!-- <option value="nicknames">Nickname</option> -->
+      <option value="pSport">Primary sport</option>
+      <option value="pTeam">Primary team/user</option>
+      <!-- <option value="sSports">Secondary sports</option>
+      <option value="sTeams">Secondary teams/users</option> -->
+      <option value="city">City</option>
+      <option value="state">State</option>
+      <option value="country">Country</option>
+    </select>
+    <input type="submit" value="Begin Sort">
+  </form>
+</nav>

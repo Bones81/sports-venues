@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <%- include('./partials/head.ejs')%>
+</head>
+<body>
+  <header>
+    <%- include('./partials/header.ejs')%>
+  </header>
+  <main id="edit-main">
+    <h2 class="page-title">Edit <%=venue.name%></h2>
+    <form action="/venues/<%=venue._id%>?_method=PUT" method="POST">
+      <label for="venue-name">Name of Venue (required) </label>
+      <input type="text" name="name" id="venue-name" value="<%=venue.name%>" size="30"><br/>
+      <label for="venue-type">Type of Venue (stadium, arena, course, pool, etc.) </label>
+      <input type="text" name="type" id="venue-type" value="<%=venue.type%>" size="30"><br/>
+      <label for="venue-year">Year of Construction </label>
+      <input type="text" name="year" id="venue-year" value="<%=venue.year%>" size="4"><br/>
+      <label for="venue-capacity">Capacity </label>
+      <input type="text" name="capacity" id="venue-capacity" value="<%=venue.capacity%>" size="15"><br/>
+      <label for="venue-cost">Construction Cost $</label>
+      <input type="text" name="cost" id="venue-cost" value="<%=venue.cost%>" size="20"><br/>
+      <label for="venue-nicknames">Venue Nickname(s) (separate multiple entries with a comma and space) </label>
+      <input type="text" name="nicknames" value="<%=venue.nicknames.join(', ')%>" size="30"><br/>
+      <input type="checkbox" id="still-in-use" name="stillExists" 
+        <% if(venue.stillExists) { %>
+          checked
+        <% } %>
+      >
+      <label for="still-in-use">Venue still in use?</label><br/>
+      <label for="primary-sport">Venue's primary sport </label>
+      <select name="pSport" id="primary-sport">
+        <option value="None Selected">--Choose a sport--</option>
+        <option value="Baseball">Baseball</option>
+        <option value="Basketball">Basketball</option>
+        <option value="Football">American football</option>
+        <option value="Soccer">Soccer/European football</option>
+        <option value="Hockey">Hockey</option>
+        <option value="Golf">Golf</option>
+        <option value="Olympics">Olympic Games</option>
+        <option value="Tennis">Tennis</option>
+        <option value="Other">Other</option>
+      </select><br/>
+      <label for="venue-pTeam">Venue's primary team/tenant </label>
+      <input type="text" name="pTeam" id="venue-pTeam" value="<%=venue.pTeam%>" size="30"><br/>
+      <label for="venue-sSports">Other sports (separate multiple entries with a comma and space) </label>
+      <input type="text" name="sSports" id="venue-sSports" value="<%=venue.sSports.join(', ')%>" size="30"><br/>
+      <label for="venue-sTeams">Other teams/tenants (separate multiple entries with a comma and space) </label>
+      <input type="text" name="sTeams" id="venue-sTeams" value="<%=venue.sTeams.join(', ')%>" size="35"><br/>
+      <label for="venue-city">City </label>
+      <input type="text" name="city" id="venue-city" value="<%=venue.city%>" size="15"><br/>
+      <label for="venue-state">State (or Province) </label>
+      <input type="text" name="state" id="venue-state" value="<%=venue.state%>" size="10"><br/>
+      <label for="venue-country">Country </label>
+      <input type="text" name="country" id="venue-country" value="<%=venue.country%>" size="10"><br/>
+      <label for="venue-oImg">Picture of Venue from outside (enter image url) </label>
+      <input type="url" name="outsideImg" id="venue-oImg" value="<%=venue.outsideImg%>" size="35"><br/>
+      <label for="venue-iImg">Picture of Venue from inside (enter image url) </label>
+      <input type="url" name="insideImg" id="venue-iImg" value="<%=venue.insideImg%>" size="35"><br/>
+      <label for="venue-highlight">YouTube link to historic moment(s) that occurred at this venue </label>
+      <input type="url" name="highlightURL" id="venue-highlight" value="<%=venue.highlightURL%>" size="30"><br/>
+      <!-- <label for="venue-mapsURL">Google Maps link </label>
+      <input type="url" name="mapsURL" id="venue-mapsURL" value="<%=venue.mapsURL%>" size="50"><br/> -->
+      <label for="venue-website">Venue Website </label>
+      <input type="url" name="website" id="venue-website" value="<%=venue.links.website%>" size="35"><br/>
+      <label for="venue-twitter">Venue Twitter handle @</label>
+      <input type="text" name="twitter" id="venue-twitter" value="<%=venue.links.twitter%>" size="20"><br/>
+      <label for="venue-fb">Venue Facebook handle @</label>
+      <input type="text" name="fb" id="venue-fb" value="<%=venue.links.fb%>" size="20"><br/>
+      <label for="venue-ig">Venue Instagram handle @</label>
+      <input type="text" name="ig" id="venue-ig" value="<%=venue.links.ig%>" size="20"><br/>
+      <input type="submit" class="update-btn btn btn-sm btn-primary" value="UPDATE <%=venue.name%> with These Values">
+    </form>
+  </main>
+  <script>
+    // The following site helped me write the logic below to pre-populate the select fields with the correct value. https://www.daftlogic.com/information-programmatically-preselect-dropdown-using-javascript.htm
+    const setSelectedIndex = (selectEl, targetValue) => {
+      for (let i = 0; i < selectEl.options.length; i++) {
+        if (selectEl.options[i].value === targetValue) {
+          selectEl.options[i].selected = "selected";
+        }
+      }
+    }
+    setSelectedIndex(document.getElementById("primary-sport"), '<%=venue.pSport%>')
+  </script>
+</body>
+</html>
